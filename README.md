@@ -9,7 +9,7 @@ tasks in the project within neovim.
 
 ```
 return {
-    "eoBattistti/tatr.nvim",
+    "eoBattisti/tatr.nvim",
 }
 ```
 
