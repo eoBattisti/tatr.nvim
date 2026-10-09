@@ -1,5 +1,6 @@
 local M = {}
 
+
 ---@class TatrCommand
 ---@field impl fun(args: string[], opts: table) The command implementation
 ---@field complete? fun(subcmd_arg_lead: string): string[] (optional) command completion callbacke
@@ -23,12 +24,31 @@ local function handle_subcmd_completion_args(subcmd_args,  lead)
 			:totable()
 end
 
+local function handle_qflist_on_exit(out)
+	vim.schedule(function ( )
+		if out.code == 0 then
+			local stdout = out.stdout .. "\n"
+			local items = {}
+			local qfid = vim.fn.getqflist({id = 0}).id
+
+			for line in string.gmatch(stdout, "([^\n]+)\n") do
+				local result, _ = string.gsub(line, "%s", '0 ', 1)
+				table.insert(items, result)
+			end
+			vim.fn.setqflist({}, 'r', {lines = items, id = qfid})
+			vim.cmd("copen")
+		else
+			vim.notify(out.stderr, vim.log.levels.ERROR)
+		end
+	end)
+end
+
 ---@type table<string, TatrCommand>
 local subcmd_table = {
 	ls = {
 		impl = function (args, _)
 			local cmd = vim.list_extend({"tatr", "ls"}, args)
-			vim.system(cmd, handle_on_exit)
+			vim.system(cmd, handle_qflist_on_exit)
 		end,
 		complete = function (subcmd_arg_lead)
 			local subcmd_args_list = {
