@@ -73,7 +73,7 @@ local subcmd_table = {
 	new = {
 		impl = function (args, _)
 			local cmd = vim.list_extend({'tatr', 'new'}, args)
-			vim.system(cmd, handle_on_exit)
+			vim.system(cmd, handle_qflist_on_exit)
 		end,
 		complete = function (subcmd_arg_lead)
 			local subcmd_args_list = {
@@ -99,7 +99,7 @@ local subcmd_table = {
 	find = {
 		impl = function (args, _)
 			local cmd = vim.list_extend({'tatr', 'find'}, args)
-			vim.system(cmd, handle_on_exit)
+			vim.system(cmd, handle_qflist_on_exit)
 		end,
 		complete = function (subcmd_arg_lead)
 			local subcmd_args_list = {
@@ -111,7 +111,7 @@ local subcmd_table = {
 	ref = {
 		impl = function (args, _)
 			local cmd = vim.list_extend({'tatr', 'ref'}, args)
-			vim.system(cmd, handle_on_exit)
+			vim.system(cmd, handle_qflist_on_exit)
 		end
 	},
 	untag = {
