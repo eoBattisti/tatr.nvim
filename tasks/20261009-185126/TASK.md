@@ -1,6 +1,6 @@
 # Tatr ref does not run properly when used from a task file
 
-- STATUS: OPEN
+- STATUS: CLOSED
 - PRIORITY: 100
 - TAGS:
 
@@ -14,3 +14,6 @@ I get the following error message:
 Consequentially this will affect also commands like:
 - `Tatr find`
 
+---
+
+We could also try to support something like `Tatr ref %` so we look for the given file the user is in

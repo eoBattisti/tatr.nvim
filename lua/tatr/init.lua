@@ -110,7 +110,13 @@ local subcmd_table = {
 	},
 	ref = {
 		impl = function (args, _)
-			local cmd = vim.list_extend({'tatr', 'ref'}, args)
+			local cmd = {'tatr', 'ref'}
+			if args[1] == '%' or args[1] == nil then
+				local huid = vim.fn.expand('%:p:h:t')
+				cmd = vim.list_extend(cmd, {huid})
+			else
+				cmd = vim.list_extend(cmd, args)
+			end
 			vim.system(cmd, handle_qflist_on_exit)
 		end
 	},

@@ -1,6 +1,6 @@
 # Display results of some subcmds in qflist
 
-- STATUS: CLOSE
+- STATUS: CLOSED
 - PRIORITY: 100
 - TAGS: improvement
 
