@@ -97,8 +97,17 @@ local subcmd_table = {
 		end
 	},
 	find = {
-		impl = function (args, _)
-			local cmd = vim.list_extend({'tatr', 'find'}, args)
+		impl = function (args, opts)
+			local cmd = {'tatr', 'find'}
+
+			if opts.range > 0 then
+				-- 20261012-201059: foobar
+				local region = vim.fn.getregion(vim.fn.getpos("'<"),  vim.fn.getpos("'>"), { type = vim.fn.visualmode()})
+				cmd = vim.list_extend(cmd, region)
+			else
+				cmd = vim.list_extend(cmd, args)
+			end
+
 			vim.system(cmd, handle_qflist_on_exit)
 		end,
 		complete = function (subcmd_arg_lead)
@@ -152,6 +161,7 @@ function M.setup(opts)
 
 	vim.api.nvim_create_user_command("Tatr", tatr_commands_impl, {
 		nargs = "+",
+		range = true,
 		desc = "Tatr commands and subcommands",
 		complete = function (arg_lead, cmdline, _)
 			local subcmd_key, subcmd_arg_lead = cmdline:match("^['<,'>]*Tatr[!]*%s(%S+)%s(.*)$")

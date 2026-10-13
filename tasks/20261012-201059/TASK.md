@@ -1,6 +1,6 @@
 # tatr-find support selecting a range
 
-- STATUS: OPEN
+- STATUS: CLOSED
 - PRIORITY: 100
 - TAGS: improvement
 
