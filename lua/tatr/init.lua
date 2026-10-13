@@ -101,7 +101,6 @@ local subcmd_table = {
 			local cmd = {'tatr', 'find'}
 
 			if opts.range > 0 then
-				-- 20261012-201059: foobar
 				local region = vim.fn.getregion(vim.fn.getpos("'<"),  vim.fn.getpos("'>"), { type = vim.fn.visualmode()})
 				cmd = vim.list_extend(cmd, region)
 			else
