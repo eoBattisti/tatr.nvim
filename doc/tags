@@ -1,0 +1,15 @@
+tatr.nvim-license	tatr.txt	/*tatr.nvim-license*
+tatr.nvim-table-of-contents	tatr.txt	/*tatr.nvim-table-of-contents*
+tatr.nvim-tatr.nvim	tatr.txt	/*tatr.nvim-tatr.nvim*
+tatr.nvim-tatr.nvim-design-decisions	tatr.txt	/*tatr.nvim-tatr.nvim-design-decisions*
+tatr.nvim-tatr.nvim-instalation	tatr.txt	/*tatr.nvim-tatr.nvim-instalation*
+tatr.nvim-usage	tatr.txt	/*tatr.nvim-usage*
+tatr.nvim-usage-list-of-subcommands	tatr.txt	/*tatr.nvim-usage-list-of-subcommands*
+tatr.nvim-usage-tatr-find	tatr.txt	/*tatr.nvim-usage-tatr-find*
+tatr.nvim-usage-tatr-init	tatr.txt	/*tatr.nvim-usage-tatr-init*
+tatr.nvim-usage-tatr-ls	tatr.txt	/*tatr.nvim-usage-tatr-ls*
+tatr.nvim-usage-tatr-new	tatr.txt	/*tatr.nvim-usage-tatr-new*
+tatr.nvim-usage-tatr-ref	tatr.txt	/*tatr.nvim-usage-tatr-ref*
+tatr.nvim-usage-tatr-summary	tatr.txt	/*tatr.nvim-usage-tatr-summary*
+tatr.nvim-usage-tatr-untag	tatr.txt	/*tatr.nvim-usage-tatr-untag*
+tatr.nvim.txt	tatr.txt	/*tatr.nvim.txt*

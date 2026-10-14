@@ -1,6 +1,6 @@
 # Create a proper vimdoc to mimic README.md using panvimdoc
 
-- STATUS: OPEN
+- STATUS: CLOSED
 - PRIORITY: 100
 - TAGS: documentation
 
