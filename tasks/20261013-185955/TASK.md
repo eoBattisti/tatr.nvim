@@ -1,7 +1,7 @@
 # create releases
 
-- STATUS: OPEN
-- PRIORITY: 100
+- STATUS: CLOSED
+- PRIORITY: 1
 - TAGS: scope
 
-No description.
+Will not do, tagging and updating the `CHANGELOG.md` is enough.
